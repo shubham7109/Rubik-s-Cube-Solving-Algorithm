@@ -5,6 +5,8 @@ public class moveBackInv {
 	public static void moveBi()
 	{
 	
+		MainController.listOfMoves('b');
+		
 		int[] temp = new int[6];
 
 	    // For moving cells onto Yellow Face and others respectively

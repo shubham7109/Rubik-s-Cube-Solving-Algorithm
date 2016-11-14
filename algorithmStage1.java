@@ -36,10 +36,11 @@ public class algorithmStage1 {
 	                    moveRight.moveR();
 	                    moveRight.moveR();
 	                }
+	                
 	        }
 	
 	        // On Yellow Side for FF
-	        if ( stateOfCube.Y[0][1] > 10 && stateOfCube.Y[0][1] < 20 )
+	        if ( stateOfCube.Y[0][1] < 20 )
 	        {
 	            if ( stateOfCube.B[0][1] == 28 && stateOfCube.Y[0][1] == 14) // Check for Red Edge
 	            {
@@ -68,10 +69,11 @@ public class algorithmStage1 {
 	                moveFront.moveF();
 	                moveFront.moveF();
 	            }
+	           
 	        }
 	        
 	        // Check for white on Green top
-	        if ( stateOfCube.G[0][1] > 10 && stateOfCube.G[0][1] < 20 )
+	        if ( stateOfCube.G[0][1] < 20 )
 	        {
 	            if ( stateOfCube.Y[2][1] == 28 && stateOfCube.G[0][1] == 14 )    // Check for Red Edge
 	            {

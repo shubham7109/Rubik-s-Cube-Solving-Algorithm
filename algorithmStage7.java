@@ -162,6 +162,8 @@ public class algorithmStage7 {
                     moveFront.moveF();
                 }
             }
+            
+           moveUpper.moveU();
         }
 }
 

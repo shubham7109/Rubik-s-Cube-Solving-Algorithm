@@ -2,8 +2,11 @@ package solver;
 
 import java.util.Random;
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class MainController {
+	
+	static ArrayList<Character> moveList = new ArrayList<>();
 	
 	public static void showStatus()
 	{
@@ -68,13 +71,28 @@ public class MainController {
 		}
 	}
 	
+	public static int randomHelper(int a)
+	{
+		Random r = new Random();
+		int z=r.nextInt(12)+1;
+		if(z-1==a || z+1==a)
+			randomHelper(z);
+		return z;
+	}
+	
 	public static void randomize()
 	{
-		int a;
-		for(int i=0;i<25;i++)
+		int a = 0;
+		int previous=-2;
+		for(int i=0;i<100;i++)
 		{
 			Random r = new Random(); 
-			a = r.nextInt(12)+1;
+			a=r.nextInt(12)+1;
+			
+			if(previous-1==a || previous+1==a)
+				a=randomHelper(a);
+			previous=a;
+			
 			if ( a == 1 )
 	             moveUpper.moveU();
 	        else if ( a == 2 )
@@ -103,6 +121,27 @@ public class MainController {
 		System.out.println("The cube has been randomized");
 		showStatus();
 	}
+	
+	public static void listOfMoves(char moves)
+	{
+		
+		/* Move Upper    = 1
+		 * Move UpperInv = 2
+		 * Move Down     = 3
+		 * Move DownInv  = 4
+		 * Move Left     = 5
+		 * Move LeftInv  = 6
+		 * Move Right    = 7
+		 * Move RightInv = 8
+		 * Move Front    = 9
+		 * Move FrontInv = 10
+		 * Move Back     = 11
+		 * Move BackInv  = 12
+		 */
+		moveList.add(moves);
+		System.out.print("["+moves+"]"+" ");
+	}
+	
 	
 	public static void reset()
 	{
@@ -171,6 +210,7 @@ public class MainController {
 
 	int check=1;
 	int choice=0;
+
 		do
 		{
 			Scanner in = new Scanner(System.in);
@@ -273,22 +313,25 @@ public class MainController {
 			}
 			
 			else if(choice==14)
-			{
-				algorithmStage1.stage1();
-				
-				algorithmStage2.stage2();
-				
-				algorithmStage3.stage3();
-				
-				algorithmStage4.stage4();
-				
-				algorithmStage5.stage5();
-				
-				algorithmStage6.stage6();
-				
-				algorithmStage7.stage7();
-				System.out.println("The cube has been solved!!");
-				showStatus();
+			{			
+						System.out.println("Starting to solve the cube");
+						algorithmStage1.stage1();
+						System.out.println("\nStage 1 complete");
+						algorithmStage2.stage2();
+						System.out.println("\nStage 2 complete");				
+						algorithmStage3.stage3();
+						System.out.println("\nStage 3 complete");
+						algorithmStage4.stage4();
+						System.out.println("\nStage 4 complete");
+						algorithmStage5.stage5();
+						System.out.println("\nStage 5 complete");
+						algorithmStage6.stage6();
+						System.out.println("\nStage 6 complete");
+						algorithmStage7.stage7();
+						System.out.println("\nStage 7 complete");
+						
+						System.out.print("The cube has been solved ");
+						showStatus();	
 			}
 			
 			else if(choice==15)

@@ -4,6 +4,9 @@ public class moveUpperInv {
 	
 	public static void moveUi()
 	{
+		
+		MainController.listOfMoves('u');
+		
 		int temp1, temp2;
 	    
 	    // For [0][2] Cell of G,R,B & O

@@ -6,12 +6,12 @@ public class algorithmStage2 {
 	{
 		while ( algorithmStage2.checkStage2() == 1 )
 	    {
-
+	
 	        if ( stateOfCube.W[0][0] < 20 && stateOfCube.W[0][2] < 20 && stateOfCube.W[2][0] < 20 && stateOfCube.W[2][2] < 20 )
 	        {
 	            if ( stateOfCube.O[2][2] != 39 )
 	            {
-	                moveFrontInv.moveFi();
+	                moveFront.moveF();
 	                moveUpper.moveU();
 	                moveFrontInv.moveFi();
 	            }
@@ -36,12 +36,10 @@ public class algorithmStage2 {
 	                moveUpper.moveU();
 	                moveLeftInv.moveLi();
 	            }
-	            
 	        }
-
+	
 	        if ( stateOfCube.G[0][2] < 20 )
 	        { 
-	            
 	            if ( stateOfCube.Y[2][2] == 29 && stateOfCube.O[0][0] == 57 )
 	            {
 	                moveUpper.moveU();
@@ -55,7 +53,7 @@ public class algorithmStage2 {
 	                moveUpper.moveU();
 	                moveRight.moveR();
 	                moveUpperInv.moveUi();
-	                moveRightInv.moveRi();
+	                moveRightInv.moveRi();               
 	            }
 	            
 	            if ( stateOfCube.Y[2][2] == 39 && stateOfCube.O[0][0] == 47 )
@@ -73,12 +71,10 @@ public class algorithmStage2 {
 	                moveUpperInv.moveUi();
 	                moveBack.moveB();
 	            }
-	            
 	        }
-
+	
 	        if ( stateOfCube.G[0][0] < 20 )
 	        {
-	            
 	                if ( stateOfCube.Y[2][0] == 57 && stateOfCube.R[0][2] == 29 )
 	                {
 	                    moveFront.moveF();
@@ -110,7 +106,7 @@ public class algorithmStage2 {
 	                    moveLeftInv.moveLi();
 	                }
 	        }
-
+	
 	        if ( stateOfCube.Y[2][2] < 20 )
 	        {
 	            if ( stateOfCube.G[0][2] == 37 && stateOfCube.O[0][0] == 59 )
@@ -159,9 +155,8 @@ public class algorithmStage2 {
 	                moveUpper.moveU();
 	                moveBack.moveB();
 	            }
-	            
 	        }
-
+	
 	            if ( stateOfCube.G[2][2] < 20 )
 	            {
 	                moveRight.moveR();
@@ -220,19 +215,19 @@ public class algorithmStage2 {
 	                moveUpper.moveU();
 	                moveRightInv.moveRi();
 	            }
-
+	
 	        moveUpper.moveU();
 	    }
 	}
 
-	public static int checkStage2() {
-		
-		   if ( stateOfCube.W[0][1] == 12 && stateOfCube.W[1][0] == 14 && stateOfCube.W[2][1] == 18 && stateOfCube.W[1][2] == 16 && stateOfCube.G[2][1] == 58 && stateOfCube.R[2][1] == 28 && stateOfCube.B[2][1] == 48 && stateOfCube.O[2][1] == 38 && stateOfCube.W[0][0] == 11 && stateOfCube.W[0][2] == 13 && stateOfCube.W[2][0] == 17 && stateOfCube.W[2][2] == 19 && stateOfCube.G[2][2] == 59 && stateOfCube.R[2][2] == 29 && stateOfCube.B[2][2] == 49 && stateOfCube.O[2][2] == 39 && stateOfCube.G[2][0] == 57 && stateOfCube.R[2][0] == 27 && stateOfCube.B[2][0] == 47 && stateOfCube.O[2][0] == 37 )
-		      {      
-		                return 0;
-		      }
-		   
-		   else
-		    return 1;
+	public static int checkStage2()
+	{
+		if ( stateOfCube.W[0][1] == 12 && stateOfCube.W[1][0] == 14 && stateOfCube.W[2][1] == 18 && stateOfCube.W[1][2] == 16 && stateOfCube.G[2][1] == 58 && stateOfCube.R[2][1] == 28 && stateOfCube.B[2][1] == 48 && stateOfCube.O[2][1] == 38 && stateOfCube.W[0][0] == 11 && stateOfCube.W[0][2] == 13 && stateOfCube.W[2][0] == 17 && stateOfCube.W[2][2] == 19 && stateOfCube.G[2][2] == 59 && stateOfCube.R[2][2] == 29 && stateOfCube.B[2][2] == 49 && stateOfCube.O[2][2] == 39 && stateOfCube.G[2][0] == 57 && stateOfCube.R[2][0] == 27 && stateOfCube.B[2][0] == 47 && stateOfCube.O[2][0] == 37 )
+		{      
+            return 0;
+		}
+    
+		else
+			return 1;
 	}
 }

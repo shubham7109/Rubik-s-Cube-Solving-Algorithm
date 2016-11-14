@@ -4,6 +4,9 @@ public class moveFrontInv {
 
 	public static void moveFi()
 	{
+		
+		MainController.listOfMoves('f');
+		
 		int[] temp = new int[6];
 
 	    // For moving cells onto Green Face and others respectively

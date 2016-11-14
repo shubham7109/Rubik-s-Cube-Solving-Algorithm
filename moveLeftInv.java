@@ -4,6 +4,9 @@ public class moveLeftInv {
 
 	public static void moveLi()
 	{
+		
+		MainController.listOfMoves('l');
+		
 		int[] temp = new int[6];
 
 		 // For moving cells onto Green Face and others respectively

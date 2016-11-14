@@ -4,6 +4,9 @@ public class moveRightInv {
 
 	public static void moveRi()
 	{
+		
+		MainController.listOfMoves('r');
+		
 	    int[] temp = new int[6];
 
 	    // For moving cells onto Green Face and others respectively

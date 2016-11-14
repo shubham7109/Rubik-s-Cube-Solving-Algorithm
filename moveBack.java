@@ -4,6 +4,9 @@ public class moveBack {
 	
 	public static void moveB()
 	{
+		
+		MainController.listOfMoves('B');
+		
 		int[] temp = new int[6];
 
 	    // For moving cells onto Green Face and others respectively

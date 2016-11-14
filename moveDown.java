@@ -4,6 +4,9 @@ public class moveDown {
 
 	public static void moveD()
 	{
+		
+		MainController.listOfMoves('D');
+		
 		int temp1, temp2;
 	    
 	    // For [2][2] Cell of G,R,B & O

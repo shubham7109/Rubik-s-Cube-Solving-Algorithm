@@ -4,6 +4,9 @@ public class moveFront {
 	
 	public static void moveF()
 	{
+		
+		MainController.listOfMoves('F');
+		
 		int[] temp = new int[6];
 		
 		// For moving cells onto Yellow Face and others respectively
