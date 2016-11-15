@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class MainController {
 	
-	static ArrayList<Character> moveList = new ArrayList<>();
+	static ArrayList<Integer> moveList = new ArrayList<>();
 	
 	public static void showStatus()
 	{
@@ -71,26 +71,22 @@ public class MainController {
 		}
 	}
 	
-	public static int randomHelper(int a)
-	{
-		Random r = new Random();
-		int z=r.nextInt(12)+1;
-		if(z-1==a || z+1==a)
-			randomHelper(z);
-		return z;
-	}
 	
 	public static void randomize()
 	{
 		int a = 0;
 		int previous=-2;
-		for(int i=0;i<100;i++)
+		for(int i=0;i<25;i++)
 		{
 			Random r = new Random(); 
 			a=r.nextInt(12)+1;
 			
-			if(previous-1==a || previous+1==a)
-				a=randomHelper(a);
+			while(previous-1==a)
+				a=r.nextInt(12)+1;
+			
+			while(previous+1==a)
+				a=r.nextInt(12)+1;
+			
 			previous=a;
 			
 			if ( a == 1 )
@@ -120,9 +116,10 @@ public class MainController {
 		}
 		System.out.println("The cube has been randomized");
 		showStatus();
+		moveList.clear();
 	}
 	
-	public static void listOfMoves(char moves)
+	public static void listOfMoves(int moves)
 	{
 		
 		/* Move Upper    = 1
@@ -206,6 +203,202 @@ public class MainController {
         stateOfCube.Y[2][2] =69;
 	}
 
+	public static void fixArrayList()
+	{
+		// same thing done 3 times to make sure all possible extra moves are removed
+		for(int i=0;i<moveList.size()-1;i++)
+		{
+			if(moveList.get(i)+1 == moveList.get(i+1))
+			{
+				moveList.remove(i);
+				moveList.remove(i);
+				i+=2;
+			}
+			
+			if(moveList.get(i)-1 == moveList.get(i))
+			{
+				moveList.remove(i);
+				moveList.remove(i-1);
+				i+=2;
+			}
+			
+			if(i<moveList.size()-4)
+			{
+				if(moveList.get(i)==moveList.get(i+1) && moveList.get(i)==moveList.get(i+2) && moveList.get(i)==moveList.get(i+3))
+				{
+					moveList.remove(i);
+					moveList.remove(i);
+					moveList.remove(i);
+					moveList.remove(i);
+					i+=4;
+				}
+			}
+			
+			if(i<moveList.size()-3)
+			{
+				if(moveList.get(i)==moveList.get(i+1) && moveList.get(i)==moveList.get(i+2) && moveList.get(i)%2!=0)
+				{
+					int toAdd = moveList.get(i)+1;
+					moveList.remove(i);
+					moveList.remove(i);
+					moveList.remove(i);
+					moveList.add(i, toAdd);
+					i+=3;
+				}
+				
+				if(moveList.get(i)==moveList.get(i+1) && moveList.get(i)==moveList.get(i+2) && moveList.get(i)%2==0)
+				{
+					int toAdd = moveList.get(i)-1;
+					moveList.remove(i);
+					moveList.remove(i);
+					moveList.remove(i);
+					moveList.add(i, toAdd);
+					i+=3;
+				}
+			}
+		}
+		
+		for(int i=0;i<moveList.size()-1;i++)
+		{
+			if(moveList.get(i)+1 == moveList.get(i+1))
+			{
+				moveList.remove(i);
+				moveList.remove(i);
+				i+=2;
+			}
+			
+			if(moveList.get(i)-1 == moveList.get(i))
+			{
+				moveList.remove(i);
+				moveList.remove(i-1);
+				i+=2;
+			}
+			
+			if(i<moveList.size()-4)
+			{
+				if(moveList.get(i)==moveList.get(i+1) && moveList.get(i)==moveList.get(i+2) && moveList.get(i)==moveList.get(i+3))
+				{
+					moveList.remove(i);
+					moveList.remove(i);
+					moveList.remove(i);
+					moveList.remove(i);
+					i+=4;
+				}
+			}
+			
+			if(i<moveList.size()-3)
+			{
+				if(moveList.get(i)==moveList.get(i+1) && moveList.get(i)==moveList.get(i+2) && moveList.get(i)%2!=0)
+				{
+					int toAdd = moveList.get(i)+1;
+					moveList.remove(i);
+					moveList.remove(i);
+					moveList.remove(i);
+					moveList.add(i, toAdd);
+					i+=3;
+				}
+			}
+			
+			if(i<moveList.size()-3)
+			{
+				if(moveList.get(i)==moveList.get(i+1) && moveList.get(i)==moveList.get(i+2) && moveList.get(i)%2==0)
+				{
+					int toAdd = moveList.get(i)-1;
+					moveList.remove(i);
+					moveList.remove(i);
+					moveList.remove(i);
+					moveList.add(i, toAdd);
+					i+=3;
+				}
+			}
+		}
+		
+		for(int i=0;i<moveList.size()-1;i++)
+		{
+			if(moveList.get(i)+1 == moveList.get(i+1))
+			{
+				moveList.remove(i);
+				moveList.remove(i);
+				i+=2;
+			}
+			
+			if(moveList.get(i)-1 == moveList.get(i))
+			{
+				moveList.remove(i);
+				moveList.remove(i-1);
+				i+=2;
+			}
+			
+			if(i<moveList.size()-4)
+			{
+				if(moveList.get(i)==moveList.get(i+1) && moveList.get(i)==moveList.get(i+2) && moveList.get(i)==moveList.get(i+3))
+				{
+					moveList.remove(i);
+					moveList.remove(i);
+					moveList.remove(i);
+					moveList.remove(i);
+					i+=4;
+				}
+			}
+			
+			if(i<moveList.size()-3)
+			{
+				if(moveList.get(i)==moveList.get(i+1) && moveList.get(i)==moveList.get(i+2) && moveList.get(i)%2!=0)
+				{
+					int toAdd = moveList.get(i)+1;
+					moveList.remove(i);
+					moveList.remove(i);
+					moveList.remove(i);
+					moveList.add(i, toAdd);
+					i+=3;
+				}
+				
+				if(moveList.get(i)==moveList.get(i+1) && moveList.get(i)==moveList.get(i+2) && moveList.get(i)%2==0)
+				{
+					int toAdd = moveList.get(i)-1;
+					moveList.remove(i);
+					moveList.remove(i);
+					moveList.remove(i);
+					moveList.add(i, toAdd);
+					i+=3;
+				}
+			}
+		}
+		
+		//to remove multiple occurences in the end of the list
+		if(moveList.get(moveList.size()-1)==moveList.get(moveList.size()-2) && moveList.get(moveList.size()-1)==moveList.get(moveList.size()-3) && moveList.get(moveList.size()-1)%2!=0)
+		{
+			int toAdd = moveList.get(moveList.size()-1)+1;
+			moveList.remove(moveList.size()-1);
+			moveList.remove(moveList.size()-1);
+			moveList.remove(moveList.size()-1);
+			moveList.add(toAdd);
+		}
+			
+		if(moveList.get(moveList.size()-1)==moveList.get(moveList.size()-2) && moveList.get(moveList.size()-1)==moveList.get(moveList.size()-3) && moveList.get(moveList.size()-1)%2==0)
+		{
+			int toAdd = moveList.get(moveList.size()-1)-1;
+			moveList.remove(moveList.size()-1);
+			moveList.remove(moveList.size()-1);
+			moveList.remove(moveList.size()-1);
+			moveList.add(toAdd);
+		}
+		
+		//to make all double movements in clockwise
+		for(int i=0;i<moveList.size()-1;i++)
+		{
+			if(moveList.get(i)==moveList.get(i+1) && moveList.get(i)%2==0)
+			{
+				int toAdd = moveList.get(i)-1;
+				moveList.remove(i);
+				moveList.remove(i);
+				moveList.add(i,toAdd);
+				moveList.add(i,toAdd);
+				i+=2;
+			}
+		}
+	}
+	
 	public static void main(String[] args) {
 
 	int check=1;
@@ -330,7 +523,12 @@ public class MainController {
 						algorithmStage7.stage7();
 						System.out.println("\nStage 7 complete");
 						
-						System.out.print("The cube has been solved ");
+						fixArrayList();
+						for(int i=0;i<moveList.size();i++)
+							System.out.print(moveList.get(i)+" ");
+						System.out.println();
+						System.out.println("The number of moves to solve the cube is : "+moveList.size());
+						System.out.println("The cube has been solved ");
 						showStatus();	
 			}
 			

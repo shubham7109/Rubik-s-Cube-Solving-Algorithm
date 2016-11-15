@@ -5,7 +5,7 @@ public class moveFront {
 	public static void moveF()
 	{
 		
-		MainController.listOfMoves('F');
+		MainController.listOfMoves(9);
 		
 		int[] temp = new int[6];
 		

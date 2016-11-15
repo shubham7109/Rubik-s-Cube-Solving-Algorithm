@@ -6,7 +6,8 @@ public class algorithmStage3 {
 	{
 		while ( algorithmStage3.checkStage3() == 1)
 	    {
-
+			moveUpper.moveU();
+			 
 	        if ( ( stateOfCube.Y[2][1] > 60 || stateOfCube.G[0][1] > 60 ) && ( stateOfCube.Y[1][0] > 60 || stateOfCube.R[0][1] > 60 ) && ( stateOfCube.Y[0][1] > 60 || stateOfCube.B[0][1] > 60 ) && ( stateOfCube.Y[1][2] > 60 || stateOfCube.O[0][1] > 60 ) )
 	        {
 	            if ( stateOfCube.G[1][0] != 54 )
@@ -154,7 +155,6 @@ public class algorithmStage3 {
 	            moveUpperInv.moveUi();
 	            moveBackInv.moveBi();
 	         }
-	         moveUpper.moveU();
 	    }
 	}
 

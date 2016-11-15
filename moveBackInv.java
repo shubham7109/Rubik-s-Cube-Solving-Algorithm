@@ -5,7 +5,7 @@ public class moveBackInv {
 	public static void moveBi()
 	{
 	
-		MainController.listOfMoves('b');
+		MainController.listOfMoves(12);
 		
 		int[] temp = new int[6];
 

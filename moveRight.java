@@ -5,7 +5,7 @@ public class moveRight {
 	public static void moveR()
 	{
 		
-		MainController.listOfMoves('R');
+		MainController.listOfMoves(7);
 		
 		int[] temp = new int[6];
 

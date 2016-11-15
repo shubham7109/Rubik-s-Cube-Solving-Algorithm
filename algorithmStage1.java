@@ -9,7 +9,11 @@ public class algorithmStage1 {
 		
 	    while (algorithmStage1.checkStage1() == 1)
 	    {
-	
+	    	if ( stay < 25 )
+		    {
+		        moveUpper.moveU();
+		    }
+	    	
 	            // Check if white has DUPLICATES
 	        if ( stateOfCube.W[0][1] < 20 && stateOfCube.W[1][0] < 20 && stateOfCube.W[2][1] < 20 && stateOfCube.W[1][2] < 20 )
 	        {
@@ -194,11 +198,6 @@ public class algorithmStage1 {
 	            moveLeft.moveL();
 	            moveLeft.moveL();           
 	        }
-	        
-	        if ( stay < 25 )
-	        {
-	        	moveUpper.moveU();
-	    	}
 	    }
 	}
 

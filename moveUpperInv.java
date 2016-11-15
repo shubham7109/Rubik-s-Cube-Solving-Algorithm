@@ -5,7 +5,7 @@ public class moveUpperInv {
 	public static void moveUi()
 	{
 		
-		MainController.listOfMoves('u');
+		MainController.listOfMoves(2);
 		
 		int temp1, temp2;
 	    

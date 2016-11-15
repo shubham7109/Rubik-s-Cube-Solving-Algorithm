@@ -6,6 +6,9 @@ public class algorithmStage6 {
 	{
 		while ( algorithmStage6.checkStage6() == 1)
         {
+            
+            moveUpper.moveU();
+            
             if ( stateOfCube.R[0][2] > 20 && stateOfCube.R[0][2] < 30  && stateOfCube.O[0][0] > 20 && stateOfCube.O[0][0] < 30 )
             {
                 moveRightInv.moveRi();
@@ -69,8 +72,6 @@ public class algorithmStage6 {
                 moveRight.moveR();
                 moveRight.moveR();
             }
-            
-            moveUpper.moveU();
         }
 
 }

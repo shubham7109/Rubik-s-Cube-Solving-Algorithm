@@ -6,6 +6,9 @@ public class algorithmStage7 {
 	{
         while ( algorithmStage7.checkStage7() == 1)
         {
+            
+           moveUpper.moveU();
+           
            if ( stateOfCube.G[0][1] != 52 && stateOfCube.O[0][1] != 32 && stateOfCube.B[0][1] != 42 && stateOfCube.R[0][1] != 22 && stateOfCube.G[0][0] == 51 && stateOfCube.O[0][0] == 31 && stateOfCube.B[0][0] == 41 && stateOfCube.R[0][0] == 21)
 
            {
@@ -162,8 +165,6 @@ public class algorithmStage7 {
                     moveFront.moveF();
                 }
             }
-            
-           moveUpper.moveU();
         }
 }
 

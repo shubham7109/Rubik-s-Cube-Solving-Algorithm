@@ -5,7 +5,7 @@ public class moveBack {
 	public static void moveB()
 	{
 		
-		MainController.listOfMoves('B');
+		MainController.listOfMoves(11);
 		
 		int[] temp = new int[6];
 

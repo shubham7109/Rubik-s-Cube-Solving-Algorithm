@@ -5,7 +5,7 @@ public class moveLeftInv {
 	public static void moveLi()
 	{
 		
-		MainController.listOfMoves('l');
+		MainController.listOfMoves(6);
 		
 		int[] temp = new int[6];
 

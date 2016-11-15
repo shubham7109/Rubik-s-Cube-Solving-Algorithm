@@ -6,7 +6,9 @@ public class algorithmStage2 {
 	{
 		while ( algorithmStage2.checkStage2() == 1 )
 	    {
-	
+			
+	        moveUpper.moveU();
+	        
 	        if ( stateOfCube.W[0][0] < 20 && stateOfCube.W[0][2] < 20 && stateOfCube.W[2][0] < 20 && stateOfCube.W[2][2] < 20 )
 	        {
 	            if ( stateOfCube.O[2][2] != 39 )
@@ -215,8 +217,6 @@ public class algorithmStage2 {
 	                moveUpper.moveU();
 	                moveRightInv.moveRi();
 	            }
-	
-	        moveUpper.moveU();
 	    }
 	}
 

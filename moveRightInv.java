@@ -5,7 +5,7 @@ public class moveRightInv {
 	public static void moveRi()
 	{
 		
-		MainController.listOfMoves('r');
+		MainController.listOfMoves(8);
 		
 	    int[] temp = new int[6];
 

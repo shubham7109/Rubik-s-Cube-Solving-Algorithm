@@ -6,6 +6,9 @@ public class algorithmStage5 {
 	{
         while ( algorithmStage5.checkStage5() == 1)
         {
+
+            moveUpper.moveU();
+            
             if ( stateOfCube.Y[0][0] > 60 && stateOfCube.Y[2][2] > 60 && stateOfCube.Y[0][2] < 60 && stateOfCube.Y[2][0] < 60 )
             {
                 moveRight.moveR();
@@ -53,8 +56,6 @@ public class algorithmStage5 {
                 moveUpper.moveU();
                 moveRightInv.moveRi();
             }
-
-            moveUpper.moveU();
         }
 }
 

@@ -4,7 +4,7 @@ public class moveUpper {
 	
 	public static void moveU() {
 		 
-		MainController.listOfMoves('U');
+		MainController.listOfMoves(1);
 		
 		int temp1, temp2 ;
 

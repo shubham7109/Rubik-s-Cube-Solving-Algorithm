@@ -5,7 +5,7 @@ public class moveDownInv {
 	public static void moveDi()
 	{
 		
-		MainController.listOfMoves('d');
+		MainController.listOfMoves(4);
 		
 		int temp1, temp2 ;
 
