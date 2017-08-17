@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
 	This CCP code is capable of solving complicated Rubik's cube states using an algorithim I developed. 
 	This method of solving the cube is based on the Fridrich method.
@@ -6,6 +7,8 @@
 	Contact: shubham71098@gmail.com
 */
 
+=======
+>>>>>>> 39ea295e868b6be101f5de5ab3b6b1b9401a10a1
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
@@ -13,8 +16,11 @@
 
 using namespace std;
 
+<<<<<<< HEAD
 
 // This class defines the current state of the cube.
+=======
+>>>>>>> 39ea295e868b6be101f5de5ab3b6b1b9401a10a1
 class def
 {
 
